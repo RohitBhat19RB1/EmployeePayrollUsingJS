@@ -1,5 +1,5 @@
 
-class EmployeePayRollData{
+class EmployeePayrollData{
     // constructor
     constructor(...params) {
         this.id = params[0];
@@ -13,7 +13,7 @@ class EmployeePayRollData{
     set name(name) {
         let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
         if (nameRegex.test(name)) this._name = name;
-        else throw 'Name is  in Incorrect format!';
+        else throw 'Name is in Incorrect format!';
     }
     get id() { return this._id; }
     set id(id) {
@@ -73,6 +73,12 @@ try {
 }
 try {
     newEmployeePayrollData.salary = -1;
+    console.log(newEmployeePayrollData.toString());
+} catch (e) {
+    console.error(e);
+}
+try {
+    newEmployeePayrollData.gender = 'm';
     console.log(newEmployeePayrollData.toString());
 } catch (e) {
     console.error(e);
